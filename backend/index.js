@@ -19,12 +19,11 @@ async function fetchResponse() {
         stop: [" Human:", " AI:"],
     });
 
-    // if(!response.ok){
-    //   throw new Error(`HTTP error: ${response.status}`)
-    // }
+  
     
-    // const data=await response.json();
-    return response.data.choices[0].text;
+    const text=response.data.choices[0].text;
+
+    return text;
     
   } catch (e) {
     console.log(e.message);
