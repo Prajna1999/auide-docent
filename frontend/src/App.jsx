@@ -8,13 +8,14 @@ function App() {
   return (
     <div className='app'>
       {/* Sidebar section */}
-      <section className='side-bar'>
+      <section className='sidebar'>
         <button>+ New Chat</button>
         <ul className='history'>
-            <nav>
+
+        </ul>
+        <nav>
               <p>Made by Prajna</p>
             </nav>
-        </ul>
       </section>
 
       {/* chat interface section */}
