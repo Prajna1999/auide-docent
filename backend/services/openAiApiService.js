@@ -10,12 +10,14 @@ const openai = new OpenAIApi(configuration);
 
 class OpenAiApiService {
 
-  async chat() {
+  async chat(content) {
     try {
 
       const response = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: "Hello world" }],
+        messages: [{ role: "user", content: content}],
+        max_tokens:100,
+        
       });
 
 
@@ -26,7 +28,7 @@ class OpenAiApiService {
 
     } catch (error) {
       console.error("Error:", error.message);
-      throw error
+      return
     }
   }
 }
