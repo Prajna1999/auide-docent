@@ -38,6 +38,17 @@ app.get('/', (req, res)=>{
 //mout the museum router to the defined path
 app.use('/api/v1', openAiApiRoutes);
 
+// error handler middleware
+app.use((err,req,res,next)=>{
+    res.status(err.status || 500);
+
+    res.json({
+      message:err.message,
+      status:false,
+      error:err
+    })
+
+})
 //start the server
 app.listen(PORT, ()=>{
   console.log(`Server is running on port ${PORT}`);
